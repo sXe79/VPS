@@ -1,9 +1,15 @@
-#!/bin/sh
+#!/bin/bash
 
+dst_path="/your/own/path"
 joomla_latest="3-9-11"
 joomla_url="https://downloads.joomla.org/cms/joomla3/"$joomla_latest"/Joomla_"$joomla_latest"-Stable-Full_Package.zip"
-echo 'Download Joomla';
-wget -O joomla.zip $joomla_url;
+wordpress_url="https://it.wordpress.org/latest-it_IT.zip"
+#echo 'Download Joomla';
+wget -qO $dst_path/joomla.zip $joomla_url;
 
-echo 'Download Wordpress';
-wget -O wordpress.zip https://it.wordpress.org/latest-it_IT.zip;
+#echo 'Download Wordpress';
+wget -qO $dst_path/wordpress.zip $wordpress_url;
+
+# Edit User, Groups and permissions
+chown admin:admin $dst_path/joomla.zip
+chown admin:admin $dst_path/wordpress.zip
