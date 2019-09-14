@@ -7,6 +7,8 @@ cert_dst="/usr/local/vesta/ssl/certificate.crt"
 key_dst="/usr/local/vesta/ssl/certificate.key"
 
 # Backup original certificates
+# TODO - usare il comando cmp per verificare se il file è diverso.
+# Se diverso copio nuovo file altrimenti nulla
 if [ -f $cert_dst.bak_vesta_original ]
     then
         mv -f $cert_dst $cert_dst.bak
