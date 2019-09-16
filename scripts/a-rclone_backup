@@ -1,4 +1,4 @@
 #!/bin/bash
 
-rclone sync /backup oneDrive:Backup || echo "Sync error on OneDrive..."
+rclone sync /backup oneDrive:Your/Backup/Path --config=/home/your-user/.config/rclone/rclone.conf || echo "Sync error on OneDrive..."
 #rclone sync /backup googleDrive:Backup || echo "Sync error on Google Drive..."
