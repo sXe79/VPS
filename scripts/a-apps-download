@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dst_path="/your/own/path"
-joomla_latest="3-9-12"
+joomla_latest="3-9-15"
 joomla_url="https://downloads.joomla.org/cms/joomla3/"$joomla_latest"/Joomla_"$joomla_latest"-Stable-Full_Package.zip"
 wordpress_url="https://it.wordpress.org/latest-it_IT.zip"
 #echo 'Download Joomla';
