@@ -6,11 +6,10 @@ local_config="/home/your-user/.config/rclone/rclone.conf"
 backup_quantity="3d"
 
 #rclone sync $local_path oneDrive:$remote_path --config=$local_config || echo "Sync error on OneDrive..."
-rclone copy $local_path oneDrive:$remote_path --config=$local_config || echo "Copy error on OneDrive..."
+#rclone copy $local_path oneDrive:$remote_path --config=$local_config || echo "Copy error on OneDrive..."
+rclone move $local_path oneDrive:$remote_path --config=$local_config || echo "Copy error on OneDrive..."
 rclone delete oneDrive:$remote_path --min-age $backup_quantity --config=$local_config || echo "Delete error on OneDrive..."
 #rclone sync /backup googleDrive:Backup || echo "Sync error on Google Drive..."
 
 ## TEST --dry-run
 #rclone delete oneDrive:$remote_path --min-age $backup_quantity --config=$local_config --dry-run
-
-#TODO - Automate the backup delete calling Vesta API
