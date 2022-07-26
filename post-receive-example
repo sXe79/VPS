@@ -1,0 +1,31 @@
+#!/bin/sh
+
+## -------------------------------------
+## STAGING DEPLOY
+## -------------------------------------
+
+echo '----------------------------------'
+echo 'Deploying Staging $site'
+echo '----------------------------------'
+cd /home/user/web/your-site/public_html/templates
+mkdir -p your-theme-directory
+cd your-theme-directory
+git --work-tree=/home/user/web/your-site/public_html/templates/your-theme-directory --git-dir=/home/user/repos/your-repo.git checkout -f dev
+echo '-- Run Composer --'
+composer install --no-dev
+echo ''
+
+## -------------------------------------
+## PRODUCTION DEPLOY
+## -------------------------------------
+
+echo '----------------------------------'
+echo 'Deploying Production $site'
+echo '----------------------------------'
+cd /home/user/web/your-site/public_html/templates
+mkdir -p your-theme-directory
+cd your-theme-directory
+git --work-tree=/home/user/web/your-site/public_html/templates/your-theme-directory --git-dir=/home/user/repos/your-repo.git checkout -f master
+echo '-- Run Composer --'
+composer install --no-dev
+echo ''
